@@ -10,7 +10,7 @@ import (
 const (
 	bigsToFactor = 100
 	// startingBigString = "1234567891011121314151617181920"
-	startingBigString = "248163264128"
+	startingBigString = "248163264"
 )
 
 var (
@@ -43,7 +43,7 @@ func TestGoParallel(t *testing.T) {
 	//Do computation in parallel
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	var outputs []OutputItem
-	outputs = DoParallel(inputs, 1)
+	outputs = DoParallel(inputs, 5)
 	
 	//Tests
 	if len(inputs) != len(outputs) {
